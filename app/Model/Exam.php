@@ -8,6 +8,7 @@ class Exam extends Model
 {
 
     protected $fillable=['name','Time_Limit','Id_Subject'];
+
     public function Subjects()
     {
         return $this->belongsTo('App\Model\Subject', 'Id_Subject');
@@ -16,6 +17,6 @@ class Exam extends Model
 
     public function Question()
     {
-        return $this->belongsTo('App\Model\Subject', 'Id_Subject');
+        return $this->hasMany('App\Model\Question', 'Id_Exam','id');
     }
 }
