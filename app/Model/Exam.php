@@ -7,8 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 class Exam extends Model
 {
 
-    protected $fillable=['name','Time_Limit','id','Id_Subject'];
-    public function Subject()
+    protected $fillable=['name','Time_Limit','Id_Subject'];
+    public function Subjects()
     {
         return $this->belongsTo('App\Model\Subject', 'Id_Subject');
     }

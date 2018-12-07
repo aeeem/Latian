@@ -8,7 +8,8 @@ class Subject extends Model
 {
 
  protected $fillable=['id','name'];
- public function Exam()
+
+ public function Exams()
  {
      return $this->hasMany('App\Model\Exam','Id_Subject');
  }

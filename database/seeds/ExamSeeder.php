@@ -13,16 +13,8 @@ class ExamSeeder extends Seeder
      */
     public function run()
     {
-        $subjects=Subject::all();
-        $data=[
-            ['name'=> 'harian','Time_Limit'=> '100'],
-            ['name'=> 'bulananan','Time_Limit'=> '100'],
-            ['name'=> 'tahunan','Time_Limit'=> '100'],
-            ['name'=> 'kabisatan','Time_Limit'=> '100'],
-        ];
-            foreach ($subjects as $row) {
-                $row->Exam()->create($data);
-                
-            }
+        factory(App\Model\Subject::class, 10)->create()->each(function ($subject) {
+            $subject->Exams()->save(factory(App\Model\Exam::class)->make());
+        });
     }
 }
