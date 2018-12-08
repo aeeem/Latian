@@ -15,8 +15,16 @@ class Question extends Model
     'opt_4',
     'answer',
     ];
+
+    //Mengambil id dari tabel Exam, untuk mengisi attribute Id_Exam
     public function Exam()
     {
         return $this->belongsTo('App\Model\Exam', 'Id_Exam');
+    }
+
+    //relasi dengan Answer, passing id Answer untuk dijadikan attribute dalam tabel Question
+    public function Answer()
+    {
+        return $this->hasMany('App\Model\Answer', 'Id_Question','id');
     }
 }

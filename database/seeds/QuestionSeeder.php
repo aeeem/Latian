@@ -16,7 +16,7 @@ class QuestionSeeder extends Seeder
 
             $count=random_int(10,50);
             //make question based on random number
-            for ($i=0; $i < $count; $i++) { 
+            for ($i=0; $i < 10; $i++) { 
                 //generationg question one with factory
                 $row->Question()->save(factory(App\Model\Question::class)->make());
             }
