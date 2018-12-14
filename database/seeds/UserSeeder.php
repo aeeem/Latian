@@ -14,7 +14,7 @@ class UserSeeder extends Seeder
     public function run()
     {
         $role=UserRole::all();
-
+        
         foreach ($role as $row) {
             $row->User()->save(factory(App\User::class)->make());
         }

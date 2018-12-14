@@ -25,6 +25,7 @@ class Exam extends Model
     //relasi dengan Student Exam, passing id exam untuk dijadikan attribute dalam tabel Student Exam
     public function StudentExam()
     {
-        return $this->hasMany('App\Model\StudentExam', 'Id_Exam', 'id');
+        return $this->belongsToMany('App\Model\StudentExam', 'student_exams', 'Id_Exam', 'Id_User');
+        
     }
 }

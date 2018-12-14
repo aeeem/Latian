@@ -22,4 +22,9 @@ class StudentExam extends Model
     {
         return $this->belongsTo('App\User', 'Id_user');
     }
+
+    public function Exam()
+    {
+        return $this->belongsTo('App\Model\Exam', 'Id_Exam');
+    }
 }
